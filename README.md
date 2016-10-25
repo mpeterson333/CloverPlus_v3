@@ -1,7 +1,7 @@
 # CloverPlus RepRap 3D Delta Printer
 by Matt Peterson - mpeterson333 / @ / gmail.com
 
-##This design is licensed under the GPLv3 and derived from the following designs:
+###This design is licensed under the GPLv3 and derived from the following designs:
 
 * RepRap Clover: http://www.thingiverse.com/thing:1114667
 
