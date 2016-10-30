@@ -1,5 +1,8 @@
 $fn=32;
 
+// Note that this version uses 624ZZ bearings instead of 603ZZ bearings to support the main shaft
+// Also, this version has been modified to use an M5 push-fit adapter and a M4 mount screw.
+
 nut_slop = .3;
 bolt_slop = .2;
 m3_diameter = 3+bolt_slop;
