@@ -18,6 +18,7 @@ module cloverplus_v3_railstop()
   width = rail_w;
   thick = rail_railcar_t - 1;
   corner_r = 2;
+  // For M3 x 4mm screws
   m3_socket_depth = 7;
 
   difference()
