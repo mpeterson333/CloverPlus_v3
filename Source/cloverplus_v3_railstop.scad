@@ -18,7 +18,7 @@ module cloverplus_v3_railstop()
   width = rail_w;
   thick = rail_railcar_t - 1;
   corner_r = 2;
-  m3_socket_depth = 6;
+  m3_socket_depth = 7;
 
   difference()
   {
