@@ -79,7 +79,7 @@ module arm(len, ball_d, width, magnet_d, magnet_len, magnet_gap, triangle=false)
           cylinder(h=magnet_recess_cyl_h, d=magnet_d, center=true);
         // Side slot for gluing
         translate([i*(slot_len*0.5-(magnet_len+ball_d*0.5+magnet_gap)*0.5),0,-width*0.5])
-          cube([slot_len, width*0.5, width], center=true);
+          cube([slot_len, width*0.4, width], center=true);
       }
       // End cutoff
       translate([i*(len_total*0.5-arm_end_cutoff_offset*0.5), 0, 0])
