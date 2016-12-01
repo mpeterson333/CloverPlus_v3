@@ -15,7 +15,7 @@ $fa = 0.5;
 
 arm_len = 100;
 ball_d = 15;
-arm_width = 8.1;
+arm_width = 9;
 triangle_add = 0.9;
 arm_magnet_recess_d = 6.2;
 // This should be as close as possible to the actual magnet length - measure a few with 
