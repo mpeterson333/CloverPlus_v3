@@ -15,11 +15,11 @@ module cloverplus_v3_railstop()
   nutplate_hole_spacing = 10;
   rail_to_end_spacing = 5;
   length = nutplate_hole_spacing;
-  width = rail_w;
-  thick = rail_railcar_t - 1;
+  width = railcar_w - 1;
+  thick = rail_t - 0.5;
   corner_r = 2;
   // For M3 x 4mm screws
-  m3_socket_depth = 7;
+  m3_socket_depth = thick - 2;
 
   difference()
   {
