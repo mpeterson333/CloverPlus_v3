@@ -89,7 +89,7 @@ module cloverplus_v3_effector_and_hotend_mount(mockup = false)
   hm_hotend_recess_h = 11.7;
   hm_hotend_recess_d = 16.4;
   hm_secure_screw_offset_from_top = 5.0;
-  hm_hotend_tube_d = 9;
+  hm_hotend_tube_d = 12;
   // End of E3D variables
   
   
@@ -157,9 +157,9 @@ module cloverplus_v3_effector_and_hotend_mount(mockup = false)
   }
   else
   {
-    *effector();
+    effector();
     // Hotend is printed upside down
-    //translate([0,55,0])
+    translate([0,55,0])
       rotate([0,180,0])
         hotend_mount();
   }
