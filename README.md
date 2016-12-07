@@ -19,3 +19,5 @@ http://www.thingiverse.com/thing:1781851
 
 * Geeetech full graphics ramps display: http://www.thingiverse.com/thing:665671
 
+* Trinity Micro Extruder 1.0 (fan shroud): http://www.thingiverse.com/thing:24390
+
