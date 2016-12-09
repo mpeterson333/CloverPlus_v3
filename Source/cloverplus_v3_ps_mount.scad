@@ -39,7 +39,7 @@ module cloverplus_v3_ps_mount()
   fc_h = 11;
   fc_t = 6;
   // bottom frame connection point
-  fc_inner_gap = leg_connector_thick*2 + leg_connector_setback*2 + 0.3;
+  fc_inner_gap = leg_connector_thick*2 + leg_connector_setback*2 + 0.5;
   fc_w = base_w;
   fc_hole_off = 5.5;
   fc_hole_d = 5.4;
