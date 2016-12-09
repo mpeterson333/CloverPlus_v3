@@ -86,7 +86,7 @@ module cloverplus_v3_topbottom(mockup_build = 0, one_piece_top_and_bottom = 0)
               translate([0, -ext_center_to_center_len, ext_len*0.5-bottom_base_thick*0.5])
                 color("grey")
                   cube([10, 10, ext_len], center=true);
-              *translate([0, -ext_center_to_center_len+ext_width*0.5+rail_t*0.5, ext_len-rail_l*0.5-top_base_thick-bottom_base_thick*0.5-15])
+              translate([0, -ext_center_to_center_len+ext_width*0.5+rail_t*0.5, ext_len-rail_l*0.5-top_base_thick-bottom_base_thick*0.5-15])
                 color("green")
                   cube([rail_w, rail_t, rail_l], center=true);
             }
@@ -98,8 +98,8 @@ module cloverplus_v3_topbottom(mockup_build = 0, one_piece_top_and_bottom = 0)
   {
     top_piece();
   
-    *translate([0,-80,0])
-      bottom_piece();
+    translate([0,-80,0])
+      bottom_piece(bottom_extruder_mount_holes=true);
   }
   
   module ext_fit_test()
@@ -337,7 +337,7 @@ module cloverplus_v3_topbottom(mockup_build = 0, one_piece_top_and_bottom = 0)
               // Controller / extruder mount holes with nut traps
               translate([base_width*0.5+leg_hole_x_offset, leg_length-leg_hole_y_offset, leg_coupler_height])
                 rotate([180,0,0])
-                  nuttrap(m4_hole_d, leg_coupler_height, m4_nuttrap_d, leg_m4_nuttrap_depth);
+                  nuttrap(m4_hole_d, leg_coupler_height-leg_m4_nuttrap_depth, m4_nuttrap_d, leg_m4_nuttrap_depth);
   
               // Extra holes for mounting extruder on bottom, for example, on the right only
               if (bottom_extruder_mount_holes && right)
@@ -345,7 +345,7 @@ module cloverplus_v3_topbottom(mockup_build = 0, one_piece_top_and_bottom = 0)
                   for (i = [-bottom_leg_extruder_mount_holes_spacing*0.5, bottom_leg_extruder_mount_holes_spacing*0.5])
                     translate([0,i,0])
                       rotate([180,0,0])
-                        nuttrap(m4_hole_d, leg_coupler_height, m4_nuttrap_d, leg_m4_nuttrap_depth);
+                        nuttrap(m4_hole_d, leg_coupler_height-leg_m4_nuttrap_depth, m4_nuttrap_d, leg_m4_nuttrap_depth);
 
               // Wire guide hole
               translate([(leg_edge_thick+0.2)*0.5-ff, leg_length-leg_wire_guide_hole_y_offset,
