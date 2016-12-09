@@ -53,7 +53,7 @@ carriage_m3_nuttrap_depth = 3;
 
 m4_nuttrap_d = 8.2;
 m4_hole_d = 4.4;
-leg_m4_nuttrap_depth = 2;
+leg_m4_nuttrap_depth = 3;
 
 // Sizing for the male/female couplers on the ends of the arms
 leg_coupler_length_male = 8;
@@ -118,6 +118,9 @@ smash_comp = 0.8;
 // Fudge Factor
 ff = 0.01;
 
+// Print layer height (use for bridging membranes)
+layer_height = 0.2;
+
 // Delta variables calculations
 calc_arm_t_len = leg_length + (base_length*0.5)/sin(30);
 calc_tip_to_base_len = (base_length*0.5)/tan(30);
@@ -158,12 +161,12 @@ rail_railcar_t = 10;
 extruder_mount_screw_spacing = 28;
 extruder_mount_screw_z_off = 40;
 extruder_mount_w = 16;
-extruder_mount_base_t = 4;
+extruder_mount_base_t = 5;
 extruder_mount_t = 5;
 extruder_mount_h = 30;
 extruder_mount_overhang = 35;
 extruder_m4_nuttrap_depth = 3;
-extruder_mount_angle = 15;
+extruder_mount_angle = 40;
 
 //------------------------- 
 // Mockup Variables
@@ -183,7 +186,6 @@ mockup_rail_l = 250;
 // Optional Smash compensation for the screw hole
 module nuttrap(hole_d, hole_h, trap_d, trap_h, smash_comp_enable=true, membrane_bridge=0)
 { 
-echo("smash_comp", smash_comp);
   difference()
   {
     union()
@@ -200,14 +202,14 @@ echo("smash_comp", smash_comp);
         cylinder(d=hole_d, h=hole_h, center=true);
         // screw-side smash compensation
         if (smash_comp_enable)
-          translate([0, 0, smash_comp*0.25+ff])
+          translate([0, 0, hole_h*0.5-smash_comp+ff])
             linear_extrude(height=smash_comp, scale=(hole_d+smash_comp*2)/hole_d)
               circle(d=hole_d, center=true);
       }
     }
     if (membrane_bridge > 0)
       translate([0,0,trap_h+membrane_bridge*0.5])
-        cylinder(h=membrane_bridge, d=trap_d, center=true);
+        cylinder(h=membrane_bridge+ff, d=trap_d, center=true);
 
   }
 }
