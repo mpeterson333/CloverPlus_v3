@@ -1,7 +1,7 @@
 # CloverPlus RepRap 3D Delta Printer
 by Matt Peterson - mpeterson333 / @ / gmail.com
 
-The CloverPlus v3 is a small, mostly-printable 3D printer with delta kinematics. Its linear motion system uses printed carriages that slide along 10mm MicroRAX aluminum extrusions.  Alternatively, one can use 250mm MR9 linear rails with MGN9C rail carriages.  Please see the Thingiverse link for photos and build tips.  Please see the Bill of Materials here for required parts, suggested sources, and pricing details.
+The CloverPlus v3 is a small, mostly-printable 3D printer with delta kinematics. Its linear motion system uses printed carriages attach to MGN9C linear rail carriages that slide along 250mm MR9 linear rails attached to 10mm MicroRax aluminum extrusions.  Alternatively, one can use printed sliders (bushings) that slide directly on the extrusions, though this is not recommended due to excess extrusion flex (the linear rails greatly increase design rigidity).  Please see the Thingiverse link for photos and build tips.  Please see the Bill of Materials here for required parts, suggested sources, and pricing details.
 
 http://www.thingiverse.com/thing:1781851
 
