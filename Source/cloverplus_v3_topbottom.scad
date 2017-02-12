@@ -165,7 +165,7 @@ module cloverplus_v3_topbottom(mockup_build = 0, one_piece_top_and_bottom = 0)
       // Idler Pulley hole
       translate([-idler_pulley_x_offset, 0, 0])
         rotate([90,0,0])
-          cylinder(h=base_width+0.2, d=idler_pulley_hole_d, center=true);
+          cylinder(h=base_width*2, d=idler_pulley_hole_d, center=true);
   
       // Extrusion mount holes
       for(i = [-1,1])

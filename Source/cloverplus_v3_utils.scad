@@ -8,8 +8,8 @@
 // Top/Bottom/General Variables
 //------------------------- 
 
-// Extrusion width
-ext_width = 10;
+// Extrusion width - this should be 10mm or 15mm
+ext_width = 15;
 // Extra extrusion width for easier insert / remove
 ext_extra = 0.25;
 
@@ -19,7 +19,8 @@ ext_len = 350;
 ext_hole_depth = 10;
 // Extrusion offsets with respect to center (don't change)
 ext_hole_x_offset = 0;
-ext_hole_y_offset = -2;
+// -2 for 10mm extrusions, -1 for 15mm
+ext_hole_y_offset = (ext_width == 15) ? -1 : -2;
 
 ext_mount_hole_d = 3.4;
 ext_mount_hole_spacing = 10;
@@ -30,24 +31,25 @@ rod_secure_hole_d = 4.7;
 // Idler pulley screw hole diameter (M5)
 idler_pulley_hole_d = 4.85;
 // Straight belt path with 608ZZ bearing requires an offset
-idler_pulley_x_offset = 7.5;
+// 7.5 for 10mm extrusions, 10.5 for 15mm
+idler_pulley_x_offset = (ext_width == 15) ? 10.5 : 7.5;
 
-// Original was 45, but the bottom needed to be bigger to accomodate slightly larger NEMA17 motors
-base_length = 46;
-// Matches original
-base_width = 22;
+// 46 for 10mm extrusions, 51 for 15mm
+base_length = (ext_width == 15) ? 51 : 46;
+// 22mm for 10mm extrusions, 24mm for 15mm
+base_width = 24;
 // Original was 17, adding 1mm to make it a bit tougher
 top_base_thick = 17;
 // Original was 13
 bottom_base_thick = 17;
 
-// This matches original
-leg_length = 85;
+// 85mm for 10mm extrusions, 87 for 15mm
+leg_length = (ext_width == 15) ? 87 : 85;
 // Leg width == base_width
 
 m3_nuttrap_d = 6.6;
 m3_hole_d = 3.4;
-m3_tight_hole_d = 2.9;
+m3_tight_hole_d = 2.8;
 m3_socket_inset_d = 5.7;
 carriage_m3_nuttrap_depth = 3;
 
@@ -85,8 +87,8 @@ leg_switch_hole_spacing = 9.5;
 leg_switch_hole_z_offset = 7.5;
 leg_switch_hole_y_offset = 30;
 
-// Y offset to start of curved cutout
-leg_cutout_start = 21;
+// Y offset to start of curved cutout - 21mm for 10mm extrusions, 24mm for 15mm
+leg_cutout_start = (ext_width == 15) ? 24 : 21;
 // This has to accomodate the M4 screw traps
 leg_cutout_curve_radius = 4;
 
@@ -95,7 +97,8 @@ leg_hole_x_offset = 0;
 leg_hole_y_offset = 14;
 
 // For extruder mount
-bottom_leg_extruder_mount_holes_y_offset = 48;
+// 48 for 10mm extrusions, 47mm for 15mm
+bottom_leg_extruder_mount_holes_y_offset = (ext_width == 15) ? 47 : 48;
 bottom_leg_extruder_mount_holes_spacing = 24;
 
 // Leg wire guide ziptie holes
@@ -108,9 +111,11 @@ leg_wire_guide_bottom_z_offset = -4;
 motor_mount_hole_d = 24;
 motor_mount_screw_hole_d = 3.2;
 motor_mount_screw_spacing = 31;
-motor_mount_size = 46;
+// 46 for 10mm extrusions, 51 for 15mm
+motor_mount_size = (ext_width == 15) ? 51 : 46;
 motor_mount_thick = 4;
-motor_mount_x_offset = 0.75;
+// 0.75 for 10mm extrusions, 3.75 for 15mm
+motor_mount_x_offset = (ext_width == 15) ? 3.75 : 0.75;
 
 // First layer smash compensation and fudge factor
 smash_comp = 0.8;
@@ -154,6 +159,20 @@ railcar_screw_inset_depth = 3;
 railcar_screw_inset_d = 6;
 // Total rail and carriage height / thickness
 rail_railcar_t = 10;
+
+//------------------------- 
+// Ball stud Variables for 
+// carriages and effector
+//------------------------- 
+ball_stud_mount_d = 12;
+ball_stud_mount_h = 8;
+ball_stud_hole_h = 5;
+ball_stud_nuttrap_extra = 7;
+ball_stud_nuttrap_h = ball_stud_mount_h - ball_stud_hole_h + ball_stud_nuttrap_extra;
+ball_stud_z_off = -2;
+ball_stud_y_off = 0;
+ball_stud_m3_hole_d = 2.85;
+ball_stud_m3_nuttrap_d = 6.5;
 
 //------------------------- 
 // Extruder mount Variables

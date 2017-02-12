@@ -55,7 +55,8 @@ module cloverplus_v3_rail_carriage(mockup_build = 0, mockup_extras = 0)
   
   // Belt width, belt edge y offset from rod center, belt recess center x offset from carriage center
   belt_w = 6.5;
-  belt_center_x_off = -5;
+  // -5 for 10mm extrusions, -2 for 15mm
+  belt_center_x_off = (ext_width == 15) ? -2 : -5;
   // Belt thickness (without teeth), additional tooth thickness, tooth width (z size), number of teeth
   belt_recess = 0.8;
   belt_tooth_recess = 0.5;
@@ -66,8 +67,9 @@ module cloverplus_v3_rail_carriage(mockup_build = 0, mockup_extras = 0)
   belt_block_l = num_teeth*belt_tooth_w*2+1;
   // Belt clamp block width
   belt_block_w = 5.5;
-  // Calculated belt block depth (Z size)
+  // How far the belt is recessed into the belt grip block
   ext_center_to_belt_edge = 12.2;
+  // Calculated belt block depth (Z size)
   belt_block_h = ext_center_to_belt_edge - ext_width*0.5 - carriage_ext_gap - belt_grip_base_t + belt_w;
   
   echo("extrusion center to balljoint center spacing", ext_width*0.5 + rail_railcar_t + carriage_base_t + ball_mount_l*0.5 + ball_off);
