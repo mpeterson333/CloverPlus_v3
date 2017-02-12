@@ -85,7 +85,7 @@ module cloverplus_v3_topbottom(mockup_build = 0, one_piece_top_and_bottom = 0)
             {
               translate([0, -ext_center_to_center_len, ext_len*0.5-bottom_base_thick*0.5])
                 color("grey")
-                  cube([10, 10, ext_len], center=true);
+                  cube([ext_width, ext_width, ext_len], center=true);
               translate([0, -ext_center_to_center_len+ext_width*0.5+rail_t*0.5, ext_len-rail_l*0.5-top_base_thick-bottom_base_thick*0.5-15])
                 color("green")
                   cube([rail_w, rail_t, rail_l], center=true);
