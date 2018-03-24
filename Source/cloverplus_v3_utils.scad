@@ -137,7 +137,11 @@ center_base_to_center_len = calc_tip_to_center_len - calc_tip_to_base_len-base_w
 // extra 1mm is to put it in the center of the pulley
 ext_center_to_belt_edge = (base_width - ext_width)*0.5 - ext_hole_y_offset + 1.2 + 1 + 1;
 
+// 15mm and 10mm extrusion versions have all the same components from
+// extrusion edge to bed center; only the edge to center difference varies
+// (for delta radius calculation)
 echo("extrusion center to bed center distance", ext_center_to_center_len);
+echo("extrusion edge to bed center distance", ext_center_to_center_len - (ext_width *0.5));
 echo("extrusion center to belt edge", ext_center_to_belt_edge); 
 
 //------------------------- 
