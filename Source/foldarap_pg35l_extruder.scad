@@ -19,7 +19,7 @@ idler_m3_nut_d = 5.4 + bolt_slop;
 
 filament_d = 1.75 + 0.3;
 filament_angle = 25;
-filament_x = 25.8;
+filament_x = 25.5;
 filament_y = 13;
 
 id_bearing_x = 1.75;
@@ -102,7 +102,7 @@ module extruder() {
               translate([filament_x,-20,filament_y])rotate([-90,0,-filament_angle]){
                 difference() {
                   // The output block itself
-                  translate([0,0,-14.27])
+                  translate([0,0,-14.13])
                       cube([18,26,11.5],center=true);
                   // The angled edge cutoff for bearing clearance
                   rotate([0,-45,0])
@@ -168,7 +168,7 @@ module extruder() {
     }
 
     // support bearing mount (screw holes, subtracted)
-    // 603ZZ 3 x 9 x 5 (mm) 
+    // 603ZZ 3 x 9 x 5 (mm)
     rotate([0,0,-filament_angle]){
       for (axis_z = [-1:2:1]) {
         translate([sup_bearing_ofset_x+sup_bearing_x,
@@ -190,7 +190,7 @@ module extruder() {
     translate([filament_x,-20,filament_y])rotate([-90,0,-filament_angle]){
       // Filament input path
       cylinder(r=filament_d/2*1.00, h=100, center=true);
-      
+
       // Push-fit hole
       union(){
         // ptfe tube recess
@@ -203,7 +203,7 @@ module extruder() {
         // Push-fit nut trap side cutout
         translate([3,0,-14.6])
           rotate([0,0,0])
-            cube([m5_nut_diameter, m5_nut_diameter - 1.3, 
+            cube([m5_nut_diameter, m5_nut_diameter - 1.3,
                   3], center=true);
         // Push-fit recess
         translate([0,0,-17.1])
@@ -228,7 +228,7 @@ module extruder() {
 }
 
 
-// idler 
+// idler
 // 624ZZ 4 x 13 x 5 (mm)
 module idler() {
   translate([-5,-60,-11.15])rotate([0,90,0]) {
@@ -271,7 +271,7 @@ module idler() {
       translate([id_bearing_x-0.5,id_bearing_y-0.5,id_bearing_z+PG35L_ofset_z]){
         %translate([-20,40.65,-15.00])cylinder(r=13/2, h=5, center=true, $fn=32);
         translate([-20,40.65,-15.00])cylinder(r=14.0/2, h=5.75, center=true, $fn=32);
-        translate([-20,50,-15.00])cube([6,10,5.75],center=true);  
+        translate([-20,50,-15.00])cube([6,10,5.75],center=true);
         translate([-20,40.65,-17.5]){
           cylinder(r=m4_diameter/2, h=30, center=true);
     //      rotate([0,0,90])translate([0,0,-4.0])
