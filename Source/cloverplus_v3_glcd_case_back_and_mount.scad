@@ -52,7 +52,7 @@ module cloverplus_v3_glcd_case_back_and_mount()
   *translate([0,60,0])
     case_front();
 
-  *translate([80, 0, lcd_mount_bracket_t*0.5])
+  translate([80, 0, lcd_mount_bracket_t*0.5])
     mount_bracket();
   
   module mount_bracket()
